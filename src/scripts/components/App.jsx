@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from './Navigation';
 import Splash from './Splash';
 import GameForm from './GameForm';
+import SearchResults from './SearchResults';
 
 class App extends React.Component {
 
@@ -38,6 +39,9 @@ class App extends React.Component {
     switch (this.state.currentRoute) {
     case 'newGame' :
       currentView = <GameForm/>;
+      break;
+    case 'searchResults' :
+      currentView = <SearchResults/>;
       break;
     default :
       currentView = <Splash/>;
