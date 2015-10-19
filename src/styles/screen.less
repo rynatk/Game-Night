@@ -1,5 +1,8 @@
 @import "../../node_modules/bootstrap/less/bootstrap";
 
+@fa-font-path: "fonts";
+@import "../../node_modules/font-awesome/less/font-awesome";
+
 @footer-height: 30px;
 
 body {
@@ -35,5 +38,103 @@ html {
 
   img {
     align-self: center;
+  }
+}
+
+.gamedetailstitle {
+  text-align: center;
+  padding: 10px 0 10px 0;
+  font-size: 40px;
+  text-shadow: 1px 1px #26B2CC;
+  font-weight: bolder;
+  color: #999999;
+}
+
+.gamedeatilitem {
+  padding-top: 30px;
+}
+
+.detailsinfo {
+  padding-top: 18px;
+  font-style: italic;
+}
+
+.gamedetailsdetails {
+  height: 200px;
+  overflow: scroll;
+  background-color: rgb(208, 208, 208);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.carousel {
+  border: 3px solid gray;
+  border-radius: 10px;
+}
+
+.gamepic {
+  width: 100%;
+}
+
+.carousel-inner {
+  width:100%;
+  max-height: 250px !important;
+}
+
+.gameImg {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 20px;
+}
+
+.btn-success {
+  border: 1px solid green;
+  border-radius: 10%;
+}
+
+.inline {
+  display: inline-flex;
+  padding-top: 30px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.well {
+  font-size: 22px;
+  padding-left: 20px;
+
+  p {
+    margin: 10px;
+  }
+}
+
+p {
+  margin: 40px;
+}
+
+/* centered columns styles */
+.row-centered {
+  text-align:center;
+}
+
+.col-centered {
+  display:inline-block;
+  float:none;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+
+.centerBlock {
+  display: table;
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  #gameForm p {
+    display: none;
   }
 }

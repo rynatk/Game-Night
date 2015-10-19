@@ -17,6 +17,12 @@ gulp.task('html', () => {
     }));
 });
 
+gulp.task('json', () => {
+  gulp.src('src/**/*.json')
+    .pipe(gulp.dest('dist'))
+    .pipe(sync.reload({stream: true}));
+});
+
 gulp.task('script', () => {
   browserify({
       entries: ['./src/scripts/main.jsx'],
@@ -25,7 +31,10 @@ gulp.task('script', () => {
     }).transform(babelify.configure({
       optional: ['es7.classProperties']
     })).bundle()
-    .on('error', gutil.log)
+    .on('error', (error) => {
+      gutil.log(gutil.colors.red('Error: ' + error.message));
+      gutil.beep();
+    })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('dist'))
     .pipe(sync.reload({
@@ -33,16 +42,26 @@ gulp.task('script', () => {
     }));
 });
 
-gulp.task('styles', () => {
+gulp.task('styles', ['fonts'], () => {
   gulp.src('src/styles/**/*.less')
-    .pipe(less().on('error', gutil.log))
+    .pipe(less()
+      .on('error', (error) => {
+        gutil.log(gutil.colors.red('Error: ' + error.message));
+        gutil.beep();
+      }))
     .pipe(gulp.dest('dist'))
     .pipe(sync.reload({
       stream: true
-    }))
+    }));
 });
 
-gulp.task('build', ['html', 'script', 'styles']);
+// Fonts
+gulp.task('fonts', () => {
+  gulp.src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('dist/fonts/'));
+});
+
+gulp.task('build', ['html', 'script', 'styles', 'json']);
 
 gulp.task("deploy", ["build"], () => {
   ghPages.publish("dist");
@@ -54,6 +73,7 @@ gulp.task('serve', ['build'], () => {
   });
 
   gulp.watch('src/**/*.html', ['html']);
+  gulp.watch('src/**/*.json', ['json']);
   gulp.watch('src/**/*.less', ['styles']);
   gulp.watch('src/**/*.{js,jsx}', ['script'])
 });

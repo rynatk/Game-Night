@@ -4,6 +4,10 @@ import Navigation from './Navigation';
 import Splash from './Splash';
 import GameForm from './GameForm';
 import InfoCollect from './InfoCollect';
+import SearchResults from './SearchResults';
+import GameDetails from './GameDetails';
+import Icon from './Icon';
+import { Games } from '../Game';
 
 class App extends React.Component {
 
@@ -33,7 +37,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.currentRoute);
     let currentView;
 
     switch (this.state.currentRoute) {
@@ -43,7 +46,16 @@ class App extends React.Component {
       case 'infoCollect' :
         currentView = <InfoCollect/>;
         break;
-      default :
+      case 'newGame' :
+        currentView = <GameForm/>;
+        break;
+      case 'searchResults' :
+        currentView = <SearchResults collection={new Games()} />;
+        break;
+      case 'gameDetails' :
+        currentView = <GameDetails />;
+        break;
+     default :
       currentView = <Splash/>;
     }
 
@@ -54,7 +66,7 @@ class App extends React.Component {
         <footer className="footer">
           <div className="container">
             <p>
-              Made with &hearts; at The Iron Yard
+              Made with <Icon type="heart" /> at The Iron Yard
               in St. Petersburg, Florida.
             </p>
           </div>
