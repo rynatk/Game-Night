@@ -25,7 +25,10 @@ gulp.task('script', () => {
     }).transform(babelify.configure({
       optional: ['es7.classProperties']
     })).bundle()
-    .on('error', gutil.log)
+    .on('error', (error) => {
+      gutil.log(gutil.colors.red('Error: ' + error.message));
+      gutil.beep();
+    })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('dist'))
     .pipe(sync.reload({
@@ -33,13 +36,23 @@ gulp.task('script', () => {
     }));
 });
 
-gulp.task('styles', () => {
+gulp.task('styles', ['fonts'], () => {
   gulp.src('src/styles/**/*.less')
-    .pipe(less().on('error', gutil.log))
+    .pipe(less()
+      .on('error', (error) => {
+        gutil.log(gutil.colors.red('Error: ' + error.message));
+        gutil.beep();
+      }))
     .pipe(gulp.dest('dist'))
     .pipe(sync.reload({
       stream: true
-    }))
+    }));
+});
+
+// Fonts
+gulp.task('fonts', () => {
+  gulp.src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('dist/fonts/'));
 });
 
 gulp.task('build', ['html', 'script', 'styles']);

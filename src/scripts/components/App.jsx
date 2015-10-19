@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import Splash from './Splash';
 import GameForm from './GameForm';
 import SearchResults from './SearchResults';
+import Icon from './Icon';
 
 class App extends React.Component {
 
@@ -54,7 +55,7 @@ class App extends React.Component {
         <footer className="footer">
           <div className="container">
             <p>
-              Made with &hearts; at The Iron Yard
+              Made with <Icon type="heart" /> at The Iron Yard
               in St. Petersburg, Florida.
             </p>
           </div>

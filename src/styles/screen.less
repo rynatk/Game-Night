@@ -1,5 +1,8 @@
 @import "../../node_modules/bootstrap/less/bootstrap";
 
+@fa-font-path: "fonts";
+@import "../../node_modules/font-awesome/less/font-awesome";
+
 @footer-height: 30px;
 
 body {
@@ -67,6 +70,28 @@ html {
   }
 }
 
- p {
-   margin: 40px;
- }
+p {
+  margin: 40px;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.centerBlock {
+    display: table;
+    margin: 0 auto;
+}
+@media (max-width: 500px) {
+  #gameForm p {
+    display: none;
+  }
+}
