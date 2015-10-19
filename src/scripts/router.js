@@ -5,7 +5,8 @@ class Router extends Backbone.Router {
   get routes() {
     return {
       '' : 'index',
-      'new' : 'newGame'
+      'new' : 'newGame',
+      'game' : 'gameDetails'
     }
   }
 
@@ -15,6 +16,10 @@ class Router extends Backbone.Router {
 
   newGame() {
     this.current = 'newGame';
+  }
+
+  gameDetails() {
+    this.current = 'gameDetails';
   }
 
   initialize() {
