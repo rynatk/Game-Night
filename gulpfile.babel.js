@@ -17,6 +17,12 @@ gulp.task('html', () => {
     }));
 });
 
+gulp.task('json', () => {
+  gulp.src('src/**/*.json')
+    .pipe(gulp.dest('dist'))
+    .pipe(sync.reload({stream: true}));
+});
+
 gulp.task('script', () => {
   browserify({
       entries: ['./src/scripts/main.jsx'],
@@ -55,7 +61,7 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest('dist/fonts/'));
 });
 
-gulp.task('build', ['html', 'script', 'styles']);
+gulp.task('build', ['html', 'script', 'styles', 'json']);
 
 gulp.task("deploy", ["build"], () => {
   ghPages.publish("dist");
@@ -67,6 +73,7 @@ gulp.task('serve', ['build'], () => {
   });
 
   gulp.watch('src/**/*.html', ['html']);
+  gulp.watch('src/**/*.json', ['json']);
   gulp.watch('src/**/*.less', ['styles']);
   gulp.watch('src/**/*.{js,jsx}', ['script'])
 });

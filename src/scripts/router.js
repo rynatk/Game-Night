@@ -10,7 +10,6 @@ class Router extends Backbone.Router {
       'results' : 'searchResults'
     }
   }
-
   index() {
     this.current = 'index';
   }

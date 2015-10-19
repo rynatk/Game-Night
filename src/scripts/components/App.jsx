@@ -6,6 +6,7 @@ import GameForm from './GameForm';
 import SearchResults from './SearchResults';
 import GameDetails from './GameDetails';
 import Icon from './Icon';
+import { Games } from '../Game';
 
 class App extends React.Component {
 
@@ -35,7 +36,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.currentRoute);
     let currentView;
 
     switch (this.state.currentRoute) {
@@ -43,10 +43,10 @@ class App extends React.Component {
       currentView = <GameForm/>;
       break;
     case 'searchResults' :
-      currentView = <SearchResults/>;
+      currentView = <SearchResults collection={new Games()} />;
       break;
     case 'gameDetails' :
-      currentView = <GameDetails/>;
+      currentView = <GameDetails />;
       break;
     default :
       currentView = <Splash/>;
