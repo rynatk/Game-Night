@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from './Navigation';
 import Splash from './Splash';
 import GameForm from './GameForm';
+import InfoCollect from './InfoCollect';
 
 class App extends React.Component {
 
@@ -36,10 +37,13 @@ class App extends React.Component {
     let currentView;
 
     switch (this.state.currentRoute) {
-    case 'newGame' :
-      currentView = <GameForm/>;
-      break;
-    default :
+      case 'newGame' :
+        currentView = <GameForm/>;
+        break;
+      case 'infoCollect' :
+        currentView = <InfoCollect/>;
+        break;
+      default :
       currentView = <Splash/>;
     }
 
