@@ -6,6 +6,7 @@ class Router extends Backbone.Router {
     return {
       '' : 'index',
       'new' : 'newGame',
+      'info' : 'infoCollect',
       'game' : 'gameDetails',
       'results' : 'searchResults'
     }
@@ -16,6 +17,11 @@ class Router extends Backbone.Router {
 
   newGame() {
     this.current = 'newGame';
+  }
+
+  infoCollect() {
+    this.current = 'infoCollect';
+
   }
 
   gameDetails() {

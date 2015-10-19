@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from './Navigation';
 import Splash from './Splash';
 import GameForm from './GameForm';
+import InfoCollect from './InfoCollect';
 import SearchResults from './SearchResults';
 import GameDetails from './GameDetails';
 import Icon from './Icon';
@@ -39,16 +40,22 @@ class App extends React.Component {
     let currentView;
 
     switch (this.state.currentRoute) {
-    case 'newGame' :
-      currentView = <GameForm/>;
-      break;
-    case 'searchResults' :
-      currentView = <SearchResults collection={new Games()} />;
-      break;
-    case 'gameDetails' :
-      currentView = <GameDetails />;
-      break;
-    default :
+      case 'newGame' :
+        currentView = <GameForm/>;
+        break;
+      case 'infoCollect' :
+        currentView = <InfoCollect/>;
+        break;
+      case 'newGame' :
+        currentView = <GameForm/>;
+        break;
+      case 'searchResults' :
+        currentView = <SearchResults collection={new Games()} />;
+        break;
+      case 'gameDetails' :
+        currentView = <GameDetails />;
+        break;
+     default :
       currentView = <Splash/>;
     }
 
