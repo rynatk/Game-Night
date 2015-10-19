@@ -7,7 +7,7 @@ class Router extends Backbone.Router {
       '' : 'index',
       'new' : 'newGame',
       'info' : 'infoCollect',
-      'game' : 'gameDetails',
+      ':id/game' : 'gameDetails',
       'results' : 'searchResults'
     }
   }

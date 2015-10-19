@@ -13,7 +13,7 @@ class SearchDetail extends React.Component {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
-          <h3 className="panel-title">{this.state.title}</h3>
+          <a href="#id/game"><h3 className="panel-title">{this.state.title}</h3></a>
         </div>
         <div className="panel-body">
           <img className="gameImg" src={this.state.images[0]} />
