@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import Splash from './Splash';
 import GameForm from './GameForm';
 import SearchResults from './SearchResults';
+import GameDetails from './GameDetails';
 import Icon from './Icon';
 
 class App extends React.Component {
@@ -43,6 +44,9 @@ class App extends React.Component {
       break;
     case 'searchResults' :
       currentView = <SearchResults/>;
+      break;
+    case 'gameDetails' :
+      currentView = <GameDetails/>;
       break;
     default :
       currentView = <Splash/>;
