@@ -77,7 +77,64 @@ html {
   width: 100%;
 }
 
-.carousel-inner{
+.carousel-inner {
   width:100%;
   max-height: 250px !important;
+}
+
+.gameImg {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 20px;
+}
+
+.btn-success {
+  border: 1px solid green;
+  border-radius: 10%;
+}
+
+.inline {
+  display: inline-flex;
+  padding-top: 30px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.well {
+  font-size: 22px;
+  padding-left: 20px;
+
+  p {
+    margin: 10px;
+  }
+}
+
+p {
+  margin: 40px;
+}
+
+/* centered columns styles */
+.row-centered {
+  text-align:center;
+}
+
+.col-centered {
+  display:inline-block;
+  float:none;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+
+.centerBlock {
+  display: table;
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  #gameForm p {
+    display: none;
+  }
 }
