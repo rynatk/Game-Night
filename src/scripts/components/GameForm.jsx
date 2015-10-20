@@ -61,16 +61,16 @@ class GameForm extends React.Component {render() {
                       <div className="centerBlock">
                     <div className="btn-group btn-group-md" id="diffChoice" data-toggle="buttons">
                       <label className="btn btn-default">
-                        <input id="q156" name="quality[25]" type="radio" value="Easy"/>
-                        Easy
+                        <input id="q156" name="quality[25]" type="radio" value="Beginner"/>
+                        Beginner
                       </label>
                       <label className="btn btn-default">
-                        <input id="q157" name="quality[25]" type="radio" value="Medium"/>
-                        Medium
+                        <input id="q157" name="quality[25]" type="radio" value="Intermediate"/>
+                        Intermediate
                       </label>
                       <label className="btn btn-default">
-                        <input id="q158" name="quality[25]" type="radio" value="Hard"/>
-                        Hard
+                        <input id="q158" name="quality[25]" type="radio" value="Advanced"/>
+                        Advanced
                       </label>
                     </div>
                   </div>

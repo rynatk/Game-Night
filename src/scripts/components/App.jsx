@@ -7,7 +7,6 @@ import InfoCollect from './InfoCollect';
 import SearchResults from './SearchResults';
 import GameDetails from './GameDetails';
 import Icon from './Icon';
-import { Games } from '../Game';
 
 class App extends React.Component {
 
@@ -50,7 +49,7 @@ class App extends React.Component {
         currentView = <GameForm/>;
         break;
       case 'searchResults' :
-        currentView = <SearchResults collection={new Games()} />;
+        currentView = <SearchResults />;
         break;
       case 'gameDetails' :
         currentView = <GameDetails />;
