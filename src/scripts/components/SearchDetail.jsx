@@ -6,7 +6,7 @@ class SearchDetail extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = this.props.model.attributes;
+    this.state = this.props.game.attributes;
   }
 
   render () {
@@ -18,7 +18,7 @@ class SearchDetail extends React.Component {
         <div className="panel-body">
           <img className="gameImg" src={this.state.images[0]} />
           <p>
-            <i>{this.state.description}</i>
+            <i>{this.state.shortSummary}</i>
           </p>
           <div className="inline">
             <p><Icon type="users"/>

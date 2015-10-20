@@ -1,21 +1,8 @@
-import Backbone from 'backbone';
+import Parse from 'parse';
 
-// Usage:
-//
-// let games = new Games();
-// games.fetch().then(function () {
-//   console.log(games);
-// });
+export default class Game extends Parse.Object {
 
-export class Game extends Backbone.Model {
-}
-
-export class Games extends Backbone.Collection {
-  get url() {
-    return '/games.json';
-  }
-
-  get model() {
-    return Game;
+  constructor() {
+    super('Game');
   }
 }
