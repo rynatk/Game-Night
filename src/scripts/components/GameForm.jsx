@@ -10,7 +10,7 @@ class GameForm extends React.Component {render() {
 
             <div className="row row-centered">
             <div className="col-xs-6 col-centered">
-              <h3 className="text-center">New Game Form</h3>
+              <h2 className="text-center">New Game Form</h2>
             </div>
            </div>
 

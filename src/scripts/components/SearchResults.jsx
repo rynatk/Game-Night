@@ -34,24 +34,14 @@ class SearchResults extends React.Component {
     return (
       <div className="container">
         <div className="results">
-          <h1>Search Results</h1>
-        </div>
-        <div className="well inline">
-          <p className="wellp">
-            <Icon type="users"/>
-            2-4
-          </p>
-          <p className="wellp">
-            <Icon type="hourglass-half"/>
-            45
-          </p>
-          <p className="wellp">
-            <Icon type="cogs"/>
-            Easy
-          </p>
-        </div>
+        <div className="jumbotron">
+          <h2 className="text-center">Search Results</h2>
+
+
         {details}
       </div>
+    </div>
+  </div>
     );
   }
 }

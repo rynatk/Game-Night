@@ -6,13 +6,12 @@ class InfoCollect extends React.Component {
     return (
     <div className='container'>
     <div className="row">
-        <h1> Game Night
-        </h1>
-      </div>
+      <div className="jumbotron">
+        <div className ='content'>
+        <h2 className="text-center">Add New Game</h2>
 
-    <h3>How Many Players?
-      <span className="label-default"></span>
-    </h3>
+
+      <p className="text-center">How Many Players</p>
       <span className="caret"></span>
       <select className="form-control">
         <option>1</option>
@@ -21,9 +20,7 @@ class InfoCollect extends React.Component {
         <option>4</option>
         <option>5</option>
       </select>
-      <h3>How Much Time?
-        <span className="label-default"></span>
-      </h3>
+      <p className="text-center">How Much Time?</p>
       <div className="dropdown">
         <span className="caret"></span>
         <select className="form-control">
@@ -33,9 +30,7 @@ class InfoCollect extends React.Component {
           <option>2:30</option>
           <option>3:00</option>
         </select>
-        <h3>How Difficult?
-          <span className="label-default"></span>
-        </h3>
+        <p className="text-center">How Difficult?</p>
           <span className="caret"></span>
           <select className="form-control">
             <option>Beginner</option>
@@ -45,7 +40,10 @@ class InfoCollect extends React.Component {
             <option>Expert</option>
           </select>
         </div>
+      </div>
   </div>
+</div>
+</div>
 );
 
   }
