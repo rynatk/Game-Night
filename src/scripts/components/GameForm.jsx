@@ -3,6 +3,7 @@ import Parse from 'parse';
 import Backbone from 'backbone';
 import Icon from './Icon';
 import Game from '../Game';
+import EmptyField from './EmptyField';
 
 class GameForm extends React.Component {
 
@@ -11,6 +12,13 @@ class GameForm extends React.Component {
     // We could validate the data
     // ON ANOTHER DAY
     // Tell parse to construct a new game with the data
+    if (document.getElementsByName('.form-control')[0], this.refs.title.value == ''
+    || this.refs.minPlayers.value == '' || this.refs.maxPlayers.value == '' || this.duration == '')
+    {
+      console.log('empty');
+      Backbone.history.navigate( `/empty`, true);
+    } else {
+
     let game = new Game();
 
     let duration = Number(this.refs.durationHours.value * 60) + Number(this.refs.durationMinutes.value);
@@ -32,6 +40,7 @@ class GameForm extends React.Component {
           .navigate(`/game/${game.id}`, true);
       });
   }
+}
 
   render() {
     return (

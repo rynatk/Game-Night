@@ -8,7 +8,9 @@ class Router extends Backbone.Router {
       'new' : 'newGame',
       'info' : 'infoCollect',
       'game/:id' : 'gameDetails',
-      'results' : 'searchResults'
+      'results' : 'searchResults',
+      'empty' : 'emptyField'
+
     }
   }
   index() {
@@ -31,6 +33,10 @@ class Router extends Backbone.Router {
 
   searchResults() {
     this.current = 'searchResults';
+  }
+
+  emptyField() {
+    this.current = 'emptyField';
   }
 
   initialize() {
