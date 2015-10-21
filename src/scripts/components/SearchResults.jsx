@@ -10,14 +10,16 @@ class SearchResults extends React.Component {
     super(props);
     this.query = new Parse.Query(Game);
     this.state = {
-      players: this.params('players'),
-      duration: this.params('duration'),
+      players: Number(this.params('players')),
+      duration: Number(this.params('duration')),
       difficulty: this.params('difficulty'),
       games: []
     };
   }
 
   componentWillMount() {
+    this.query.lessThanOrEqualTo("minPlayers", this.state.players);
+    this.query.greaterThanOrEqualTo("maxPlayers", this.state.players);
     this.query
       .find({
         success: (results) => {
