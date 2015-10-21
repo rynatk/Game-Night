@@ -4,35 +4,32 @@ import StarRating from './StarRating';
 
 class SearchDetail extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = this.props.model.attributes;
-  }
-
   render () {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
-          <a href="#id/game"><h3 className="panel-title">{this.state.title}</h3></a>
+          <a href={`#/game/${this.props.game.id}`}>
+            <h3 className="panel-title">{this.props.game.get('title')}</h3>
+          </a>
         </div>
         <div className="panel-body">
-          <img className="gameImg" src={this.state.images[0]} />
+          <img className="gameImg" src={this.props.game.get('images')[0]}/>
           <p>
-            <i>{this.state.description}</i>
+            <i>{this.props.game.get('shortSummary')}</i>
           </p>
           <div className="inline">
             <p><Icon type="users"/>
-              {this.state.minPlayers}-{this.state.maxPlayers}
+              {this.props.game.get('minPlayers')}-{this.props.game.get('maxPlayers')}
             </p>
             <p>
               <Icon type="hourglass-half"/>
-              {this.state.duration}
+              {this.props.game.get('duration')}
             </p>
             <p>
               <Icon type="cogs"/>
-              {this.state.difficulty}
+              {this.props.game.get('difficulty')}
             </p>
-            <StarRating rating={this.state.rating} />
+            <StarRating rating={this.props.game.get('rating')}/>
           </div>
         </div>
       </div>

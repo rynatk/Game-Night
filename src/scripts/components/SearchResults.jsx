@@ -1,58 +1,75 @@
 import React from 'react';
+import Parse from 'parse';
 import Icon from './Icon';
 import SearchDetail from './SearchDetail';
+import Game from '../Game';
 
 class SearchResults extends React.Component {
 
   constructor(props) {
     super(props);
+    this.query = new Parse.Query(Game);
     this.state = {
-      models: props.collection.models
+      players: this.params('players'),
+      duration: this.params('duration'),
+      difficulty: this.params('difficulty'),
+      games: []
     };
   }
 
   componentWillMount() {
-    this.props.collection.on('sync update', this.handleSync);
-    this.props
-      .collection
-      .fetch();
-  }
-
-  handleSync = () => {
-    this.setState({
-      models: this.props.collection.models
-    });
+    this.query
+      .find({
+        success: (results) => {
+          this.setState({
+            games: results
+          });
+        }
+      });
   }
 
   render () {
     let details = this.state
-      .models
-      .map((model, i) => {
-        return <SearchDetail key={i} model={model}/>;
+      .games
+      .map((game, i) => {
+        return <SearchDetail game={game} key={i}/>;
       });
 
     return (
-      <div className="container">
+      <div className="container search-results">
         <div className="results">
-          <h1>Search Results</h1>
+          <div className="jumbotron">
+            <h2 className="text-center">Search Results</h2>
+            <div className="row text-center">
+              <div className="col-xs-4">
+                <Icon type="users"/>
+                <br/>
+                {this.state.players}
+              </div>
+              <div className="col-xs-4">
+                <Icon type="hourglass-half"/>
+                <br/>
+                {this.state.duration}
+              </div>
+              <div className="col-xs-4">
+                <Icon type="cogs"/>
+                <br/>
+                {this.state.difficulty}
+              </div>
+            </div>
+
+          </div>
+          {details}
         </div>
-        <div className="well inline">
-          <p className="wellp">
-            <Icon type="users"/>
-            2-4
-          </p>
-          <p className="wellp">
-            <Icon type="hourglass-half"/>
-            45
-          </p>
-          <p className="wellp">
-            <Icon type="cogs"/>
-            Easy
-          </p>
-        </div>
-        {details}
       </div>
     );
+  }
+
+  params(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.hash);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 }
 
