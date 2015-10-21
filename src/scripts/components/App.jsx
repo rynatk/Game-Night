@@ -52,7 +52,7 @@ class App extends React.Component {
         currentView = <SearchResults />;
         break;
       case 'gameDetails' :
-        currentView = <GameDetails />;
+        currentView = <GameDetails game_id={this.props.router.game_id} />;
         break;
      default :
       currentView = <Splash/>;
@@ -62,8 +62,8 @@ class App extends React.Component {
       <div>
         <Navigation current={this.state.currentRoute}/>
         {currentView}
-        <footer className="footer">
-          <div className="container">
+        <footer className="container">
+          <div className="footer">
             <p>
               Made with <Icon type="heart" /> at The Iron Yard
               in St. Petersburg, Florida.
