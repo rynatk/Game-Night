@@ -2,11 +2,9 @@ import React from 'react';
 
 class Splash extends React.Component {
 
-  componentWillMount() {
-    $(function() {
-      $("#splashtext").delay(1000).fadeIn(1000);
-      $("#startnow").delay(2000).fadeIn(1500);
-    });
+  componentDidMount() {
+    $("#splashtext").delay(1000).fadeIn(1000);
+    $("#startnow").delay(2000).fadeIn(1500);
   }
 
   render() {
