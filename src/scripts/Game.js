@@ -6,3 +6,5 @@ export default class Game extends Parse.Object {
     super('Game');
   }
 }
+
+window.Game = Game;
