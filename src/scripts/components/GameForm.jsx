@@ -1,13 +1,13 @@
 import React from 'react';
 import Parse from 'parse';
 import Icon from './Icon';
-import AddGame from '../addGame';
+import Game from '../Game';
 
 class GameForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.query = new Parse.Query(AddGame);
+    this.query = new Parse.Query(Game);
     // this.state = this.props.game.attributes;
   }
 
