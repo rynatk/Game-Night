@@ -62,8 +62,8 @@ class App extends React.Component {
       <div>
         <Navigation current={this.state.currentRoute}/>
         {currentView}
-        <footer className="footer">
-          <div className="container">
+        <footer className="container">
+          <div className="footer">
             <p>
               Made with <Icon type="heart" /> at The Iron Yard
               in St. Petersburg, Florida.
