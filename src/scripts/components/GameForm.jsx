@@ -13,7 +13,8 @@ class GameForm extends React.Component {
     // ON ANOTHER DAY
     // Tell parse to construct a new game with the data
     if (document.getElementsByName('.form-control')[0], this.refs.title.value == ''
-    || this.refs.minPlayers.value == '' || this.refs.maxPlayers.value == '' || this.duration == '')
+    || this.refs.minPlayers.value == '' || this.refs.maxPlayers.value == '' || this.refs.durationHours.value == '' ||
+    this.refs.durationMinutes.value == '')
     {
       console.log('empty');
       Backbone.history.navigate( `/empty`, true);
