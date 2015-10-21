@@ -52,7 +52,7 @@ class App extends React.Component {
         currentView = <SearchResults />;
         break;
       case 'gameDetails' :
-        currentView = <GameDetails />;
+        currentView = <GameDetails game_id={this.props.router.game_id} />;
         break;
      default :
       currentView = <Splash/>;
