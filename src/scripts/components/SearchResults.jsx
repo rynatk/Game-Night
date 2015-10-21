@@ -66,7 +66,6 @@ class SearchResults extends React.Component {
   }
 
   params(name) {
-    console.log(name, location);
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.hash);
