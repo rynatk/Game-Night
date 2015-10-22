@@ -3,8 +3,9 @@ import React from 'react';
 class Splash extends React.Component {
 
   componentDidMount() {
-    $("#splashtext").delay(1000).fadeIn(1000);
-    $("#startnow").delay(2000).fadeIn(1500);
+  //  $("#splashtext").delay(1000).fadeIn(1000);
+  //   $("#startnow").delay(2000).fadeIn(1500);
+  // $("#introcopy").delay(2500).fadeIn(2000);
   }
 
   render() {
@@ -23,10 +24,20 @@ class Splash extends React.Component {
           </div>
         </div>
         <div className="centerBlock">
-        <div id="splashtext" style={{display: 'none'}}>Personalized Board Game Manager</div>
+        <div id="splashtext" style={{ }}>Personalized Board Game Manager</div>
         </div>
         <div className="centerBlock">
-        <button id="startnow" style={{display: 'none'}}>START NOW</button>
+        <button id="startnow" style={{ }}>START NOW</button>
+        </div>
+          <div className="centerBlock">
+          <div id="introcopy" style={{ }}>Hanging out with a group of
+          friends or someone special? In a competitive mood? Or just looking to have a fun-filled evening? We have your web app!
+          GameNight, created by front-end web development students at The Iron Yard,
+          is an app designed to help you choose board games based on the number of players,
+          duration and difficulty. Whether it is an old classic like Trivial Pursuit or a modern hit
+          like Exploding Kittens, we will recommend the right game for your particular evening (or anytime!).
+          This is the best place on the web to search for board games! Do not just look for games in the GameNight database,
+          submit your own! Do your part so fellow gamers can take <em>their</em> turn. </div>
         </div>
 
         </div>
