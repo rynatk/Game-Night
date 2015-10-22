@@ -32,7 +32,7 @@ class CarouselItem extends React.Component {
     return (
       <div className={klass}>
         <div className="row">
-          <div className="col-lg-4 col-xs-12">
+          <div className="col-xs-12">
             <img className="media-object img-rounded img-responsive center-block gamepic" src={this.props.image}/>
           </div>
         </div>

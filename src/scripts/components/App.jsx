@@ -6,6 +6,7 @@ import GameForm from './GameForm';
 import InfoCollect from './InfoCollect';
 import SearchResults from './SearchResults';
 import GameDetails from './GameDetails';
+import EmptyField from './EmptyField';
 import Icon from './Icon';
 import EditGameDetails from './EditGameDetails';
 
@@ -57,6 +58,9 @@ class App extends React.Component {
         break;
       case 'editGameDetails' :
         currentView = <EditGameDetails game_id={this.props.router.game_id} />;
+        break;
+      case 'emptyField' :
+        currentView = <EmptyField />;
         break;
      default :
       currentView = <Splash/>;

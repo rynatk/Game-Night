@@ -1,6 +1,13 @@
 import React from 'react';
+import Backbone from 'backbone';
 
 class Splash extends React.Component {
+
+  handleSubmit = () =>  {
+    console.log('Hello');
+    Backbone.history.navigate(`/info`, true);
+  }
+
 
   componentDidMount() {
     $("#splashtext").delay(1000).fadeIn(1000);
@@ -26,7 +33,7 @@ class Splash extends React.Component {
         <div id="splashtext" style={{display: 'none'}}>Personalized Board Game Manager</div>
         </div>
         <div className="centerBlock">
-        <button id="startnow" style={{display: 'none'}}>START NOW</button>
+        <button onClick={this.handleSubmit} id="startnow" style={{display: 'none'}}>START NOW</button>
         </div>
 
         </div>
