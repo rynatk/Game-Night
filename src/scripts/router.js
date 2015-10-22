@@ -8,7 +8,8 @@ class Router extends Backbone.Router {
       'new' : 'newGame',
       'info' : 'infoCollect',
       'game/:id' : 'gameDetails',
-      'results' : 'searchResults'
+      'results' : 'searchResults',
+      'edit/:id' : 'editGameDetails'
     }
   }
   index() {
@@ -31,6 +32,11 @@ class Router extends Backbone.Router {
 
   searchResults() {
     this.current = 'searchResults';
+  }
+
+  editGameDetails(game_id) {
+    this.current = 'editGameDetails';
+    this.game_id = game_id;
   }
 
   initialize() {

@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default class Carousel extends React.Component {
+class Carousel extends React.Component {
+
 
   render() {
     let items = this.props.images.map((image, i) => {
@@ -39,3 +40,5 @@ class CarouselItem extends React.Component {
     );
   }
 }
+
+export default Carousel;

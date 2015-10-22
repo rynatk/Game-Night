@@ -45,6 +45,17 @@ class GameDetails extends React.Component {
             <div className=" gamedetailsdetails">
               {this.state.game.get('description')}
             </div>
+              <div className="row row-centered">
+                <div className="col-xs-4 col-centered">
+                  <div className="centerBlock">
+                    <a href={`#/edit/${this.state.game.id}`}>
+                      <button className="btn btn-lg btn-success" type="submit">
+                        Edit
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
     } else {
