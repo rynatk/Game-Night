@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Parse from 'parse';
 import Navigation from './Navigation';
 import Splash from './Splash';
 import GameForm from './GameForm';
@@ -7,6 +7,7 @@ import InfoCollect from './InfoCollect';
 import SearchResults from './SearchResults';
 import GameDetails from './GameDetails';
 import EmptyField from './EmptyField';
+import SignUp from './SignUp';
 import Icon from './Icon';
 import EditGameDetails from './EditGameDetails';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentUser: Parse.User.current(),
       currentRoute: props.router.current
     }
   }
@@ -32,7 +34,9 @@ class App extends React.Component {
   }
 
   onRoute = () => {
+    $('.navbar-toggle').click();
     this.setState({
+      currentUser: Parse.User.current(),
       currentRoute: this.props.router.current
     });
   }
@@ -62,13 +66,16 @@ class App extends React.Component {
       case 'emptyField' :
         currentView = <EmptyField />;
         break;
+      case 'signUp' :
+        currentView = <SignUp />;
+        break;
      default :
       currentView = <Splash/>;
     }
 
     return (
       <div>
-        <Navigation current={this.state.currentRoute}/>
+        <Navigation current={this.state.currentRoute} currentUser={this.state.currentUser}/>
         {currentView}
         <footer className="footer">
           <div className="container">

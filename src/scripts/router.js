@@ -10,9 +10,11 @@ class Router extends Backbone.Router {
       'game/:id' : 'gameDetails',
       'results' : 'searchResults',
       'edit/:id' : 'editGameDetails',
-      'empty' : 'emptyField'
+      'empty' : 'emptyField',
+      'register': 'signUp'
     }
   }
+
   index() {
     this.current = 'index';
   }
@@ -35,7 +37,6 @@ class Router extends Backbone.Router {
     this.current = 'searchResults';
   }
 
-
   editGameDetails(game_id) {
     this.current = 'editGameDetails';
     this.game_id = game_id;
@@ -43,6 +44,10 @@ class Router extends Backbone.Router {
 
   emptyField() {
     this.current = 'emptyField';
+  }
+
+  signUp() {
+    this.current = 'signUp';
   }
 
   initialize() {

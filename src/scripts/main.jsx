@@ -22,3 +22,5 @@ $(() => {
     document.getElementById('app')
   );
 });
+
+window.Parse = Parse;
