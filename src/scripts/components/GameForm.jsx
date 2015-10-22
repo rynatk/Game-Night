@@ -25,10 +25,13 @@ class GameForm extends React.Component {
     let duration = Number(this.refs.durationHours.value * 60) + Number(this.refs.durationMinutes.value);
 
     game.set('title', this.refs.title.value);
+    game.set('description', Text(this.refs.gameDescription.value));
+    game.set('shortSummary', Text(this.refs.shortSummary.value));
     game.set('minPlayers', Number(this.refs.minPlayers.value));
     game.set('maxPlayers', Number(this.refs.maxPlayers.value));
     game.set('duration', duration);
     game.set('difficulty', event.target.elements.difficulty.value);
+    game.set('rating', Number(this.state.rating));
 
     game.set('images', []); // For NOW. TODO: use a text field, split on new lines.
 
@@ -63,6 +66,26 @@ class GameForm extends React.Component {
                 </div>
                 <div className="col-xs-6 col-centered">
                   <input className="form-control" id="title" ref="title" type="text"></input>
+                </div>
+                <div className="col-xs-3 col-centered"></div>
+              </div>
+
+              <div className="row row-centered">
+                <div className="col-xs-3 col-centered">
+                  <p className="text-right">Description:</p>
+                </div>
+                <div className="col-xs-6 col-centered">
+                  <input className="form-control" id="description" ref="description" type="textarea"></input>
+                </div>
+                <div className="col-xs-3 col-centered"></div>
+              </div>
+
+              <div className="row row-centered">
+                <div className="col-xs-3 col-centered">
+                  <p className="text-right">Short Summary:</p>
+                </div>
+                <div className="col-xs-6 col-centered">
+                  <input className="form-control" id="shortSummary" ref="shortSummary" type="textarea"></input>
                 </div>
                 <div className="col-xs-3 col-centered"></div>
               </div>
@@ -119,23 +142,41 @@ class GameForm extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-xs-3 col-centered"></div>
               </div>
 
               <div className="row row-centered">
-                <div className="col-xs-4 col-centered">
-                  <div className="centerBlock">
-                    <button className="btn btn-lg btn-success" type="submit">Add Game</button>
+                <div className="col-xs-3 col-centered">
+                  <p className="text-right">Rating
+                    <Icon type="star"/></p>
+                </div>
+                <div className="col-xs-3 col-centered">
+                <div className="centerBlock">
+                    <span className="rating"></span>
+                    <select className="form-control" ref="rating">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="col-xs-3 col-centered"></div>
+
+                <div className="row row-centered">
+                  <div className="col-xs-4 col-centered">
+                    <div className="centerBlock">
+                      <button className="btn btn-lg btn-success" type="submit">Add Game</button>
+                    </div>
                   </div>
                 </div>
               </div>
-
             </form>
           </div>
         </div>
       </div>
-    );
-  }
-}
 
+    )
+  };
+}
 export default GameForm;
