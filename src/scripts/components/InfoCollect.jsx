@@ -17,7 +17,7 @@ class InfoCollect extends React.Component {
     return (
       <div className='container info-collect'>
         <div className="row">
-          <div className="jumbotron col-md-offset-2 col-md-8">
+          <div id="info-jumbotron" className="jumbotron col-md-offset-2 col-md-8">
             <div className='content'>
               <h2 className="text-center">Looking for a Game?</h2>
 
@@ -53,7 +53,7 @@ class InfoCollect extends React.Component {
               </div>
 
               <p className="text-center">
-                <button onClick={this.handleSubmit} className="btn btn-primary">Search</button>
+                <button onClick={this.handleSubmit} id="info-search" className="btn btn-primary">Search</button>
               </p>
             </div>
           </div>

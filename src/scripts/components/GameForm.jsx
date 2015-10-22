@@ -5,8 +5,8 @@ class GameForm extends React.Component {render() {
     return (
 
       <div id="gameForm">
-        <div className="container">
-          <div className="jumbotron">
+        <div className="container new-game">
+          <div id="gameform-jumbotron" className="jumbotron">
 
             <div className="row row-centered">
             <div className="col-xs-6 col-centered">
@@ -81,7 +81,7 @@ class GameForm extends React.Component {render() {
               <div className="row row-centered">
                 <div className="col-xs-4 col-centered">
                   <div className="centerBlock">
-                  <button className="btn btn-lg btn-success" type="submit">Add Game</button>
+                  <button className="btn btn-lg btn-success" id="addGame-button" type="submit">Add Game</button>
                   </div>
                 </div>
               </div>

@@ -6,7 +6,7 @@ class SearchDetail extends React.Component {
 
   render () {
     return (
-      <div className="panel panel-default">
+      <div id="searchDetail-panel" className="panel panel-default">
         <div className="panel-heading">
           <a href={`#/game/${this.props.game.id}`}>
             <h3 className="panel-title">{this.props.game.get('title')}</h3>

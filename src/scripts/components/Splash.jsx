@@ -10,7 +10,7 @@ class Splash extends React.Component {
   render() {
     return <div className="container splashcontainer">
       <div className="splashpopout animated fadeIn">
-        <div className="animated bounceInDown splashwelcome">It's GameNight!</div>
+        <div id="welcome" className="animated bounceInDown splashwelcome">It's Game Night!</div>
         <div className="row">
           <div className="col-xs-4 text-right splashgamepad">
             <div className="fa fa-gamepad animated fadeInLeftBig fa-5x"></div>

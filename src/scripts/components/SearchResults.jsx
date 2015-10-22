@@ -40,7 +40,7 @@ class SearchResults extends React.Component {
     return (
       <div className="container search-results">
         <div className="results">
-          <div className="jumbotron">
+          <div id="results-jumbotron" className="jumbotron">
             <h2 className="text-center">Search Results</h2>
             <div className="row text-center">
               <div className="col-xs-4">
