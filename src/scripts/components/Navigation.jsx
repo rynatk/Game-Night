@@ -43,7 +43,6 @@ class Navigation extends React.Component {
             <ul className="nav navbar-nav">
               <NavigationItem current={this.props.current === 'info'} label="Home" to="#/info" icon="home" />
               <NavigationItem current={this.props.current === 'newGame'} label="New Game" to="#/new" icon="plus" />
-              <NavigationItem current={this.props.current === 'searchResults'} label="Search Results" to="#/results"/>
             </ul>
           </div>
         </div>

@@ -18,8 +18,20 @@ class SearchResults extends React.Component {
   }
 
   componentWillMount() {
-    this.query.lessThanOrEqualTo("minPlayers", this.state.players);
-    this.query.greaterThanOrEqualTo("maxPlayers", this.state.players);
+    this.query.lessThanOrEqualTo('minPlayers', this.state.players);
+    this.query.greaterThanOrEqualTo('maxPlayers', this.state.players);
+    this.query.lessThanOrEqualTo('duration', this.state.duration);
+    this.query.equalTo('difficulty', this.state.difficulty);
+    // This part is not functioning but I wanted to keep the concept
+    //     switch (this.state.difficulty) {
+    //       case 'advanced':
+    //         this.query.equalTo('difficulty', ('advanced' && 'intermediate' && 'beginner'));
+    //         break;
+    //       case 'intermediate':
+    //         this.query.equalTo('difficulty', ('intermediate' && 'beginner'));
+    //       default:
+    //         this.query.equalTo('difficulty', 'beginner');
+    // };
     this.query
       .find({
         success: (results) => {
