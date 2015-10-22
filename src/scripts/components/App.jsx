@@ -43,16 +43,22 @@ class App extends React.Component {
 
   render() {
     let currentView;
+    let currentUser;
 
     switch (this.state.currentRoute) {
       case 'newGame' :
-        currentView = <GameForm />;
+        if(currentUser) {
+          currentView = <GameForm />;
+        } else {
+          currentView = <Splash />;
+        };
         break;
       case 'infoCollect' :
-        currentView = <InfoCollect />;
-        break;
-      case 'newGame' :
-        currentView = <GameForm />;
+        if(currentUser) {
+          currentView = <InfoCollect />;
+        } else {
+          currentView = <Splash />;
+        };
         break;
       case 'searchResults' :
         currentView = <SearchResults />;
