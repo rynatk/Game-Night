@@ -6,7 +6,9 @@ import GameForm from './GameForm';
 import InfoCollect from './InfoCollect';
 import SearchResults from './SearchResults';
 import GameDetails from './GameDetails';
+import EmptyField from './EmptyField';
 import Icon from './Icon';
+import EditGameDetails from './EditGameDetails';
 
 class App extends React.Component {
 
@@ -40,19 +42,25 @@ class App extends React.Component {
 
     switch (this.state.currentRoute) {
       case 'newGame' :
-        currentView = <GameForm/>;
+        currentView = <GameForm />;
         break;
       case 'infoCollect' :
-        currentView = <InfoCollect/>;
+        currentView = <InfoCollect />;
         break;
       case 'newGame' :
-        currentView = <GameForm/>;
+        currentView = <GameForm />;
         break;
       case 'searchResults' :
         currentView = <SearchResults />;
         break;
       case 'gameDetails' :
         currentView = <GameDetails game_id={this.props.router.game_id} />;
+        break;
+      case 'editGameDetails' :
+        currentView = <EditGameDetails game_id={this.props.router.game_id} />;
+        break;
+      case 'emptyField' :
+        currentView = <EmptyField />;
         break;
      default :
       currentView = <Splash/>;
@@ -62,8 +70,8 @@ class App extends React.Component {
       <div>
         <Navigation current={this.state.currentRoute}/>
         {currentView}
-        <footer className="container">
-          <div className="footer">
+        <footer className="footer">
+          <div className="container">
             <p>
               Made with <Icon type="heart" /> at The Iron Yard
               in St. Petersburg, Florida.

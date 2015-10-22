@@ -51,6 +51,7 @@ class InfoCollect extends React.Component {
                   <option>Advanced</option>
                 </select>
               </div>
+          
 
               <p className="text-center">
                 <button onClick={this.handleSubmit} id="info-search" className="btn btn-primary">Search</button>

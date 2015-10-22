@@ -9,6 +9,8 @@ body {
   padding-top: 50px;
   margin-bottom: @footer-height;
   background-image: url(http://img.wonderhowto.com/img/34/18/63411095856461/0/scrabble-2-men-created-trivial-pursuit-rip-chris-haney.w654.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 html {
@@ -22,23 +24,11 @@ html {
   width: 100%;
   height: @footer-height;
   line-height: @footer-height;
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.5);
   color: black;
-}
 
-.splash {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-
-  img {
-    align-self: center;
+  p {
+    margin: 0 auto;
   }
 }
 
@@ -71,8 +61,8 @@ html {
 
 .gamedetailstitle {
   text-align: center;
-  padding: 10px 0 10px 0;
-  font-size: 40px;
+  padding: 10px 0 0 0;
+  font-size: 35px;
   text-shadow: 1px 1px #26B2CC;
   font-weight: bolder;
   color: #999999;
@@ -94,6 +84,10 @@ html {
   border-radius: 10px;
   padding: 10px;
   margin: 0 auto;
+}
+
+.detailsrating {
+  padding-bottom: 10px;
 }
 
 .carousel {
@@ -136,10 +130,6 @@ html {
   p {
     margin: 10px;
   }
-}
-
-p {
-  margin: 40px;
 }
 
 /* centered columns styles */
@@ -195,23 +185,19 @@ p {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.splashcontainer {
-  height: 105vh;
-  margin: 0 auto;
-}
-
 #splashtext {
-  font-size: 30px;
+  font-size: 20px;
+  color: #eee;
+  text-shadow: 0px 2px 2px #666;
+  font-weight: bold;
   padding-top: 40px;
   padding-bottom:10px;
 }
 
 .splashpopout {
-  height: 100vh;
-  margin: 30px 150px 150px;
   border: solid;
   border-radius: 10px;
-  background-color: #cc2a36;
+  background-color: rgba(204,42,54, 0.75);
   // background-image: url(http://img.wonderhowto.com/img/34/18/63411095856461/0/scrabble-2-men-created-trivial-pursuit-rip-chris-haney.w654.jpg);
 }
 
@@ -223,13 +209,28 @@ p {
   background-color:#00a0b0;
   border:3px solid #393939;
   border-radius:10px;
-  margin-top: 90px;
+  margin: 20px auto;
 
   &:hover {
-    background-color:rgba(255,204,0,0.8);
+    background-color: rgba(255,204,0,0.8);
   }
 }
 
-.info-collect, .search-results, .new-game {
+#introcopy{
+  font-size: 14px;
+  position: relative;
+  // top: -55px;
+  opacity: .7;
+  padding: 20px;
+  border: 5px double rgb(221, 145, 240);
+  background: white;
+  margin: 10px;
+}
+
+.info-collect, .search-results, .new-game, .splashcontainer {
   margin-top: 30px;
+
+  p {
+    margin: 20px;
+  }
 }
